@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    tools:context=".AddBookActivity">
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:popupBackground="#66ccff"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@null"
+        android:hint="书名"
+        android:padding="5dp" />
+
+    <EditText
+        android:id="@+id/etPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@null"
+        android:hint="售价"
+        android:inputType="numberDecimal"
+        android:padding="5dp" />
+
+    <Button
+        android:id="@+id/btAddBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="添加书刊" />
+
+
+    <EditText
+        android:id="@+id/etBookType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:hint="书刊类型"
+        android:padding="5dp" />
+
+    <Button
+        android:id="@+id/btAddBookType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="添加书刊类型" />
+
+
+    <Button
+        android:id="@+id/btInsert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="模拟插入多条数据" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btGoPaging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转paging页面" />
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:id="@+id/btGoLiveData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转LiveData" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
