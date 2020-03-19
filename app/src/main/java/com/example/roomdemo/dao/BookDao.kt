@@ -41,5 +41,8 @@ interface BookDao {
     @Query("select * from tb_book")
     fun getBooksByLiveData(): LiveData<Array<Book>>
 
+    @Query("select * from tb_book where name = :name")
+    fun findBookByName(name: String): Array<Book>
+
 
 }

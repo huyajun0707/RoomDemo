@@ -71,7 +71,7 @@ dependencies {
     implementation "androidx.room:room-guava:$room_version"
 
     // Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
     // optional - Coroutines support for Room
 //    implementation "androidx.room:room-coroutines:2.1.0-alpha06"
     // Test helpers for Room
@@ -88,10 +88,13 @@ dependencies {
     // -------- INSTRUMENTATION TESTS (use JUnit4)
     androidTestImplementation 'junit:junit:4.12'
 
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'//AndroidJUnit4.class
+
     // AndroidX test
     def androidx_test_version = "1.1.0"
 //    androidTestImplementation "androidx.test:core:$androidx_test_version"
     androidTestImplementation "androidx.test:runner:$androidx_test_version"
+    androidTestImplementation 'com.google.truth:truth:1.0'  //断言更好用
 
     // Architecture components testing
 //    def androidx_arch_test_version = "2.0.1"

@@ -26,7 +26,9 @@ data class Book constructor(
     var id: Int
 ) {
     constructor() : this(0)
+
     var name: String? = null
     var type_id: Int = 0
     var price: Float = 0f
+    var versionCode: Int? = 0
 }

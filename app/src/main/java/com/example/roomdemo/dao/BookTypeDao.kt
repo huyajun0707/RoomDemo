@@ -16,7 +16,7 @@ import io.reactivex.Flowable
 @Dao
 interface BookTypeDao {
     @Insert
-    fun insertAll(items:Array<BookType>)
+    fun insertAll(items: Array<BookType>)
 
     @Update
     fun update(item: BookType)
@@ -28,5 +28,10 @@ interface BookTypeDao {
     fun getAll(): Flowable<Array<BookType>>
 
     @Query("select name from tb_book_type")
-    fun getAllBookTypeNames():Flowable<Array<String>>
+    fun getAllBookTypeNames(): Flowable<Array<String>>
+
+    @Query("select * from tb_book_type where name = :name")
+    fun findBookTypeByName(name:String):Array<BookType>
+
+
 }

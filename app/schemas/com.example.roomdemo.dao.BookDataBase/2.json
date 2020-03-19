@@ -1,12 +1,12 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "7a635c007a25294b00c8eac09325e4b0",
+    "version": 2,
+    "identityHash": "7b363febb1a6a775587dcdafe7e5cb49",
     "entities": [
       {
         "tableName": "tb_book",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `type_id` INTEGER NOT NULL, `price` REAL NOT NULL, `version` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, FOREIGN KEY(`type_id`) REFERENCES `tb_book_type`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT, `type_id` INTEGER NOT NULL, `price` REAL NOT NULL, `versionCode` INTEGER, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, FOREIGN KEY(`type_id`) REFERENCES `tb_book_type`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "name",
@@ -27,10 +27,10 @@
             "notNull": true
           },
           {
-            "fieldPath": "version",
-            "columnName": "version",
+            "fieldPath": "versionCode",
+            "columnName": "versionCode",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "id",
@@ -90,7 +90,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7a635c007a25294b00c8eac09325e4b0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7b363febb1a6a775587dcdafe7e5cb49')"
     ]
   }
 }

@@ -32,7 +32,6 @@ class PagingActivity : AppCompatActivity() {
         mAdapter = BookPagingAdapter()
         recyclerView.adapter = mAdapter
 
-        binds()
         mAdapter.onItemButtonClickListener = object :OnItemButtonClickListener{
             override fun onItemButtonClickListener(view: View, any: Any, position: Int) {
 
@@ -40,8 +39,9 @@ class PagingActivity : AppCompatActivity() {
             }
         }
 
-
-
+        binds()
+        viewModel.getRefreshLiveData()
+            .observe(this, Observer { mAdapter.submitList(it) })
     }
 
     private fun binds() {
@@ -51,7 +51,6 @@ class PagingActivity : AppCompatActivity() {
 
             Observable.just(0)
                 .delay(2, TimeUnit.SECONDS)
-                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnNext {
                     mSwipeRefreshLayout.isRefreshing = false

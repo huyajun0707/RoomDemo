@@ -11,7 +11,7 @@ import com.example.roomdemo.entity.BookType
  * @date        ： 2019-10-20 20:34
  * @depiction   ：
  */
-@Database(entities = arrayOf(Book::class,BookType::class),version = 1)
+@Database(entities = arrayOf(Book::class,BookType::class),version = 2)
 abstract class BookDataBase : RoomDatabase() {
 
     abstract fun bookDao(): BookDao
